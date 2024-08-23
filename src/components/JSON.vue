@@ -266,8 +266,8 @@ li {
 }
 
 .highlight {
-  background-color: #42b883;
-  color: white;
+  background-color: #eb33eb;
+  color: rgb(228, 228, 228);
   cursor: pointer;
 }
 
