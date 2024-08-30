@@ -76,26 +76,34 @@
   
       <!-- Display Submitted Cards -->
       <div class="row mt-5" v-if="submittedCards.length">
-        <div class="d-flex flex-wrap justify-content-start gap-3">
-          <div v-for="(card, index) in submittedCards" :key="index" class="card" style="width: 18rem">
-            <div class="card-header bg-primary text-white">User Information</div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Username: {{ card.username }}</li>
-              <li class="list-group-item">Password: {{ card.password }}</li>
-              <li class="list-group-item">
-                Australian Resident: {{ card.isAustralian ? 'Yes' : 'No' }}
-              </li>
-              <li class="list-group-item">Gender: {{ card.gender }}</li>
-              <li class="list-group-item">Reason: {{ card.reason }}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div class="d-flex flex-wrap justify-content-start gap-3">
+      <Card
+        v-for="(card, index) in submittedCards"
+        :key="index"
+        class="p-card"
+        style="width: 18rem"
+        title="User Information"
+        subTitle=""
+      >
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Username: {{ card.username }}</li>
+          <li class="list-group-item">Password: {{ card.password }}</li>
+          <li class="list-group-item">
+            Australian Resident: {{ card.isAustralian ? 'Yes' : 'No' }}
+          </li>
+          <li class="list-group-item">Gender: {{ card.gender }}</li>
+          <li class="list-group-item">Reason: {{ card.reason }}</li>
+        </ul>
+      </Card>
     </div>
+  </div>
+</div>
   </template>
 
 <script setup>
 import { ref } from 'vue'
+
+
 
 const formData = ref({
   username: '',
@@ -174,6 +182,12 @@ const validatePassword = (blur) => {
 </script>
 
 <style scoped>
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: start;
+}
 .absolute-position {
   position: absolute;
   top: 0;
@@ -181,5 +195,46 @@ const validatePassword = (blur) => {
   right: 0;
   width: 100vw;
   padding-top: 2rem;
+}
+/*small device*/ 
+@media (max-width: 575.99px) {
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .row.mb-3 {
+    margin-bottom: 1rem;
+  }
+
+  .absolute-position {
+    padding-top: 1rem; 
+    width: 100vw; 
+  }
+}
+
+
+/*medium device*/ 
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .col-md-6 {
+    flex: 0 0 50%; 
+    max-width: 50%;
+  }
+}
+
+/*large device*/ 
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/*X Large device*/ 
+@media (min-width: 992px) {
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
 }
 </style>
