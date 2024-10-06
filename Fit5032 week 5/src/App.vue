@@ -17,10 +17,10 @@ const logout = () => {
   <div class="main-container">
     <header>
       <nav>
-        <router-link to="/">LogIn</router-link>
+        
         <router-link v-if="isAuthenticated" to="/about">About</router-link>
         <button v-if="isAuthenticated" @click="logout">Logout</button>
-        <router-link v-if="!isAuthenticated" to="/Home">Sign up</router-link>
+        
         
         
       </nav>

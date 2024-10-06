@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "Fit5032 week 5"
+location: "asia-east1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "Fit5032 week 5-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
