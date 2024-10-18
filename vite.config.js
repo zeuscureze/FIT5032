@@ -15,7 +15,6 @@ export default defineConfig(({ mode }) => ({
     }
   },
   base: mode === 'production'
-    ? '/<FIT5032>/'  // 替换为你GitHub仓库的名称
-    : '/'
+    ? '/<FIT5032>/' 
 }))
 
