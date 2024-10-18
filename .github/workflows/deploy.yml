@@ -3,33 +3,29 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master  # 这里指定你的主分支，可以是 main 或 master
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Build
-      run: npm run build
+      - name: Build the project
+        run: npm run build
 
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@4.1.4
-      with:
-        branch: gh-pages
-        folder: dist
-
-permissions:
-  contents: write
-  
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # 指定部署的分支为 gh-pages
+          folder: dist       # 指定构建后生成的文件夹，例如 Vue.js 项目的 dist 文件夹
