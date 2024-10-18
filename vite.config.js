@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => ({
     }
   },
   base: mode === 'production'
-    ? '/<FIT5032>/'  //13
+    ? '/<FIT5032>/'  //13123
     : '/'
 }))
 
