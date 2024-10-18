@@ -1,22 +1,17 @@
-import { createApp } from 'vue';
-import App from './App.vue';
-import router from './components/router/router.js'; 
-import PrimeVue from 'primevue/config';
-import ToastService from 'primevue/toastservice';
-import Aura from '@primevue/themes/Aura'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-const app = createApp(App);
+import { createApp } from 'vue'
 
+import router from './router/router'
 
-app.use(PrimeVue, {
-    theme: {
-      preset: Aura
-    }
-  })
-app.use(ToastService);
+import PrimeVue from 'primevue/config'
+import Aura from '../node_modules/@primevue/themes/aura'
 
-app.use(router);
+import App from './App.vue'
 
+import '../firebase' // Assuming you have Firebase setup
+const app = createApp(App)
+app.use(PrimeVue, { theme: { preset: Aura } })
+app.use(router)
 
-app.mount('#app');
+app.mount('#app')
