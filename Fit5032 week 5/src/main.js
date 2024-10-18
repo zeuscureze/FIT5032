@@ -5,10 +5,11 @@ import { createApp } from 'vue'
 import router from './router/router'
 
 import PrimeVue from 'primevue/config'
-import Aura from '@primevue/themes/aura'
+import Aura from '../node_modules/@primevue/themes/aura'
 
 import App from './App.vue'
-import {firebaseApp} from './FBCONfit'
+
+import './firebase' // Assuming you have Firebase setup
 const app = createApp(App)
 app.use(PrimeVue, { theme: { preset: Aura } })
 app.use(router)
