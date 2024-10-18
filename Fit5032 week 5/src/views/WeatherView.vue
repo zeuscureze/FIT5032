@@ -31,7 +31,7 @@
   <script>
   import axios from "axios";
   
-  const apikey = "f119cecf81f6ce4aded58c301f29140c"; // 替换为你自己的API key
+  const apikey = "f119cecf81f6ce4aded58c301f29140c"; 
   
   export default {
     data() {
