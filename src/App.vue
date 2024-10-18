@@ -28,7 +28,7 @@ const logout = () => {
   </header>
 
   <main class="main-box">
-    <!--<LibraryRegis2trationForm /> -->
+    <!--<LibraryRegis2trati2onForm /> -->
     <!-- <JSONLab /> -->
     <Router-View />
   </main>
